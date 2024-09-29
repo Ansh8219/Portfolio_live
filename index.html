@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    /* Transparent Navbar on Top of Video */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    /* Navbar Item Hover Effect */
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffeb3b;
+      transform: translateY(-5px); /* Small lift effect */
+    }
+
+    /* Add icons next to navbar items */
+    .navbar-nav .nav-link i {
+      margin-right: 8px;
+    }
+
+    /* Video Section Styling */
+    .video-background {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Overlay Text Styling */
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4); /* Slight dark overlay to enhance text visibility */
+    }
+
+    .video-overlay h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .video-overlay p {
+      font-size: 1.5rem;
+      color: #ffeb3b;
+      animation: fadeIn 2s ease-in-out 1s;
+    }
+
+    .video-overlay .summary {
+      font-size: 1.2rem;
+      color: white;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out 2s;
+      max-width: 700px;
+    }
+
+    /* Keyframe animation for fade in */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Section (Transparent Over Video) -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ansh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html"><i class="fas fa-th-large"></i>Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="fas fa-laptop-code"></i>Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Video Section with Text Animation -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="video6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Animated Text Overlay -->
+    <div class="video-overlay">
+      <h1>Hello, I'm Ansh</h1>
+      <p>Full Stack Web Developer</p>
+      <!-- Summary Below the Title -->
+      <p class="summary">I specialize in building dynamic and responsive web applications with cutting-edge technologies. My expertise spans both front-end and back-end development, delivering high-quality user experiences and seamless functionality.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
